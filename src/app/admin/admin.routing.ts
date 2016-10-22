@@ -4,14 +4,22 @@ import {Routes, RouterModule} from '@angular/router';
 import {AdminComponent}    from './admin.component';
 import {SettingsComponent} from "./settings/settings.component";
 import {EmailComponent} from "./email/email.component";
+import {AuthGuardService} from "../common/services/auth-guard.service";
 
 const adminRoutes: Routes = [
   {
     path: 'admin', component: AdminComponent,
+    canActivate: [AuthGuardService],
     children: [
-      {path: 'settings', component: SettingsComponent},
-      {path: 'email', component: EmailComponent},
-      {path: '', redirectTo: '/admin/settings', pathMatch: 'full'}
+      {
+        path: '',
+        canActivateChild: [AuthGuardService],
+        children: [
+          {path: 'settings', component: SettingsComponent},
+          {path: 'email', component: EmailComponent},
+          {path: '', redirectTo: '/admin/settings', pathMatch: 'full'}
+        ]
+      }
     ]
   }
 ];
