@@ -8,7 +8,7 @@ export class HomeResolveService {
   resolve() {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        resolve('lala');
+        resolve('resolve data');
         console.log('home resolve done');
       }, 1000);
 

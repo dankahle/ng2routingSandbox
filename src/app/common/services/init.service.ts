@@ -17,19 +17,12 @@ export class InitService implements CanActivate {
 
   constructor(private router:Router) { }
 
-  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Promise<boolean> {
     if (!this.initialized) {
-      this.initialize()
-        .then(() => {
-          let url = state.url.replace(/\//g, '');
-          console.log('redirecting to: ', url);
-          this.router.navigate([url]);
-
-        })
-      return false;
+      return this.initialize()
     }
     else {
-      return true;
+      return Promise.resolve(true);
     }
   }
 
@@ -42,13 +35,13 @@ export class InitService implements CanActivate {
   }
 */
 
-  initialize(): Promise<void> {
+  initialize(): Promise<boolean> {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         console.log('initialized');
         this.initialized = true;
-        resolve();
-      }, 0)
+        resolve(true);
+      }, 1000)
 
     })
   }
