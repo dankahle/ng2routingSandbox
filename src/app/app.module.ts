@@ -6,7 +6,6 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import {AdminModule} from "./admin/admin.module";
-import {RouterModule} from "@angular/router";
 import {HomeModule} from "./home/home.module";
 import {CommonModule} from "./common/common.module";
 

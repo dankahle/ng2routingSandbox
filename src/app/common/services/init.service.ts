@@ -41,7 +41,7 @@ export class InitService implements CanActivate {
         console.log('initialized');
         this.initialized = true;
         resolve(true);
-      }, 1000)
+      }, 0)
 
     })
   }

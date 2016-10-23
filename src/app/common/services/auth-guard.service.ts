@@ -14,7 +14,7 @@ export class AuthGuardService {
   constructor() { }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-    console.log(route, state);
+    // console.log(route, state);
     return true;
   }
 

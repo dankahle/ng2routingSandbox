@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app works!';
+
+  onActivate(val:any) {
+    console.log('activate', val);
+  }
+
+  onDeactivate(val:any) {
+    console.log('deactivate', val);
+  }
+
 }

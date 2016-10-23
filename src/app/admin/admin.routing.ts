@@ -16,9 +16,10 @@ const adminRoutes: Routes = [
         path: '',
         canActivateChild: [AuthGuardService],
         children: [
+          {path: '', redirectTo: 'settings'},
+          // {path: '', redirectTo: '/admin/settings', pathMatch: 'full'}// this is overkill, we're making a child route decision here
           {path: 'settings', component: SettingsComponent},
           {path: 'email', component: EmailComponent},
-          {path: '', redirectTo: '/admin/settings', pathMatch: 'full'}
         ]
       }
     ]

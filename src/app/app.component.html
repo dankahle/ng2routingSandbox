@@ -3,4 +3,4 @@
   <a routerLink="/home" routerLinkActive="active">Home</a>
   <a routerLink="/admin" routerLinkActive="active">Admin</a>
 </nav>
-<router-outlet></router-outlet>
+<router-outlet (activate)="onActivate($event)" (deactivate)="onDeactivate($event)"></router-outlet>

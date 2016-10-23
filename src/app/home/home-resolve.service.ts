@@ -10,7 +10,7 @@ export class HomeResolveService {
       setTimeout(() => {
         resolve('resolve data');
         console.log('home resolve done');
-      }, 1000);
+      }, 0);
 
 
     })

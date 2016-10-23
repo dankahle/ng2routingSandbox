@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminComponent implements OnInit {
 
+  adminProp = 'something';
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onActivate(val:any) {
+    console.log('activate', val);
+  }
+
+  onDeactivate(val:any) {
+    console.log('deactivate', val);
   }
 
 }
